@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap") layer(CDNFont);
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root{
+    --white:#fff;
+    --whitefa:#fafafa;
+    --blacka1:#1a1a1a;
+    --balck00:#000;
+    --orange:#f26900;
+    
+    --gray:#adadad; /*input border*/
+    --light-gray: #ADADAD;
+    --primary:#043b72;
+
+    --w:100%;
+}
+
+.align-left{
+  text-align: left;
+}
+.align-right{
+  text-align: right;
+}
+.align-top{
+  text-align: top;
+}
+.align-bottom{
+  text-align: bottom;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+.flex-a-top{
+  align-items: flex-start;
+}
+/*input*/
+.textarea, .select, .input {    
+    box-sizing: border-box;
+    background-color:var(--whitefa);
+    padding-inline: 8px;
+    color:var(--blacka1);
+    font-size: 12px;    
+    letter-spacing: 0rem;
+    border-radius: 3px;
+    border: 1px solid var(--light-gray);
+    background: var(--white);
+    height: 24px;
+  }
+  .textarea::placeholder, .select::placeholder, .input::placeholder {
+    color: #cccccc;
+  }
+  .textarea:disabled, .select:disabled, .input:disabled {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  [readonly].textarea, [readonly].select, [readonly].input {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  textarea:focus, 
+  select:focus,
+  input:focus{
+    border:1px solid var(--primary);
+  }
+  .select {
+    background: url(../images/bg_select.svg) no-repeat right 20px center;
+    background-size: 7px;
+    padding-right:3px;
+    appearance: none;
+    width: 100%;
+  }
+  /*checkbox*/
+  .check-group{
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+  }
+  .check-group .check-type1 {
+    overflow: hidden;
+    position: absolute;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .check-group +  .check-group{
+    margin: 0 ;
+  }
+  .check-group .check-type1 + label{
+    display:inline-flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  .check-group .check-type1 + label::before {
+    background: url(../images/bg_check_off.svg) no-repeat center center;
+    content: "";
+    width:24px;
+    height: 24px;
+    display: inline-block;
+    background-size: 18px;  
+  }
+  .check-group .check-type1:checked + label::before {
+    background: url(../images/bg_check_on.svg) no-repeat center center;
+    background-size: 18px;
+  }
+  /*radiobox*/
