@@ -110,16 +110,50 @@
     </header>
     <main>
         <div id="container">
+            <!--title-->
             <div class="title_area">
-                <h2>화면명</h2>
-                <div class="breadcrumbs">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">1depth</a></li>
-                        <li><a href="#">2depth</a></li>
-                    </ul>
+                <h2 class="title">수신 팩스함</h2>
+                <ul class="breadcrumbs">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">1depth</a></li>
+                    <li><a href="#">2depth</a></li>
+                </ul>
+            </div>
+            <!--//title-->
+           
+            <!--search-->
+            <div class="search-group" >
+                <div class="search-inner">
+                    <div>
+                        <div class="tit">
+                            <label>기간선택</label>
+                        </div>
+                        <div class="date-grop">
+                            <div class="date">
+                                <input class="input" type="number" placeholder="YYYY-MM-DD" id="cal" />
+                                <button type="button" class="btn-cal"></button>
+                            </div>
+                            <span>
+                                ~
+                            </span>
+                            <div class="date">
+                                <input class="input" type="number" placeholder="YYYY-MM-DD" id="cal" />
+                                <button type="button" class="btn-cal"></button>
+                            </div>
+                            <button type="button" class="btn tertiary">오늘</button>
+                            <button type="button" class="btn tertiary">한주</button>
+                            <button type="button" class="btn tertiary">한달</button>
+                        </div>
+                        
+                        
+                       
+                    </div>
+                    <div>
+                        <input type="text" class="input" placeholder="0505-1234-1234"/>
+                    </div>
                 </div>
             </div>
+            <!--//search-->
         </div>
     </main>
 </body>
