@@ -48,7 +48,7 @@
     border: 1px solid var(--gray);
     background: var(--white);
     height: 24px;
-    width: var(--w);
+    width: calc(var(--w, auto) * 1px);
   }
   .textarea::placeholder, .select::placeholder, .input::placeholder {
     color: #cccccc;
@@ -798,4 +798,19 @@ min-width: 18px;
     color:var(--blacka1);
     font-weight: 400;
     text-align: left;
+}
+.tbl-type1{
+  border-top: 2px solid var(--blacka1);
+  border-bottom:2px solid var(--blacka1);
+}
+.tbl-type1 th,
+.tbl-type1 td{
+  padding:10px 0;
+}
+.tbl-type1 tr ~ tr{
+  border-top:1px solid #c1c1c1;
+}
+.tbl-type1 th{
+  font-size: 12px;
+  text-align: center;
 }

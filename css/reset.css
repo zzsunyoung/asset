@@ -142,8 +142,20 @@
   input[type="date"]:valid::before {
     display: none;
   }
+  input[type="checkbox"],
+  input[type="radio"]{
+    position: absolute;
+    width: 1px;
+    height: 1px ;
+    padding: 0 ;
+    margin: -1px ;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px) ;
+    white-space: nowrap ;
+    border: 0 ;
+  }
   *:focus{
-    outline-offset: -0.4rem;
+    /* outline-offset: -0.4rem; */
     outline: 2px solid rgba(36, 107, 235, 0.8);
   }
   [role="button"] {
@@ -169,7 +181,7 @@
     padding: 0 ;
     margin: -1px ;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0) ;
+    clip: rect(1px, 1px, 1px, 1px) ;
     white-space: nowrap ;
     border: 0 ;
   }
