@@ -142,4 +142,51 @@
   input[type="date"]:valid::before {
     display: none;
   }
+  *:focus{
+    outline-offset: -0.4rem;
+    outline: 2px solid rgba(36, 107, 235, 0.8);
+  }
+  [role="button"] {
+    cursor: pointer;
+  }
+  
+  .img img {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .img.bg-img {
+    background-size: cover;
+  }
+  
+  .blind,
+  hr,
+  .aria-hidden,
+  legend,
+  caption {
+    position: absolute;
+    width: 1px;
+    height: 1px ;
+    padding: 0 ;
+    margin: -1px ;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0) ;
+    white-space: nowrap ;
+    border: 0 ;
+  }
+  .hide {
+    display: none !important;
+  }
+  .show {
+    display: block !important;
+  }
+  
+  .tal {
+    text-align: left !important;
+  }
+  .tac {
+    text-align: center !important;
+  }
+  .tar {
+    text-align: right !important;
+  }
 }

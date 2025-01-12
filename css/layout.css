@@ -1,0 +1,197 @@
+@charset "UTF-8";
+/*header*/
+#header{
+    position: sticky;
+    top:0;
+    left:0;
+    z-index: 10;
+    width: 100%;
+    background:#043B72;
+    height: 100px;
+
+  }
+  #header .header-wrap{
+    padding:15px 30px 0 18px;
+    display: grid;
+    grid-template-columns: 339px  auto;
+  }
+  #header .user-info{
+    color:var(--white);
+    font-size:12px;
+    margin-bottom: 8px;
+  }
+  #header .user-info {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  #header .user-info ul{
+    display: inline-flex;
+    gap:10px;
+  }
+  #header .user-info ul li::before{
+    content: '/';
+    display: inline-block;
+    margin-right:10px;
+
+  }
+  #header .user-info ul li:first-child::before{
+    display: none;
+  }
+  #header .user-btn{
+    display: flex;
+    background:rgba(122,164,206,0.3);
+    border-radius: 3px;
+    margin-left: 13px;
+    width: 52px;
+
+  }
+  #header .user-btn .user-menu{
+    background:url(../images/icon_user.svg) center center no-repeat;
+    background-size: 20px 18px;
+    width:30px;
+    height: 22px;
+    position: relative;
+  }
+  #header .user-btn .user-menu::before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+    background: #184d84;
+    position: absolute;
+    left:0;
+    top:0;
+  }
+  #header .btn-logout{
+    background:url(../images/icon_logout.svg) center center no-repeat;
+    background-size: 16px 16px;
+    width:22px;
+    height: 22px;
+
+  }
+  #header .logo{
+  background: url(../images/img_logo.png) 0 0 no-repeat;
+  width: 162px;
+  height: 56px;
+  display: block;
+  }
+  #header .header-content{
+    display: flex;
+    justify-content: space-between;
+  }
+  #header .header-gnb{
+   display: grid;
+   grid-template-columns: 339px 1fr auto;
+   align-items: center;
+  }
+  .gnb ul{
+    display: flex;
+    gap: 28px;
+    padding: 0;
+  
+  }
+ .gnb ul li{
+    color:var(--white);
+    font-size:16px;
+    font-weight: 500;
+    position: relative;
+  
+  }
+
+.gnb ul li a{   
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(to bottom, #E87722, #E87722) no-repeat bottom / 0% 4px;
+    transition: 0.5s;
+    padding:0 0 30px;
+  }
+ 
+ .gnb ul li:is(:has(:focus),:hover) a{
+      color:#E87722;
+      background-size: 100% 4px;     
+      transition:0.4s ease-in-out;   
+  }
+  .gnb ul li.on a{
+    background: linear-gradient(to bottom, #E87722, #E87722) no-repeat bottom / 0% 4px;
+  }
+  .gnb ul li.on a{
+    color:#E87722;
+      background-size: 100% 4px;     
+      transition:0.4s ease-in-out; 
+  }
+  .gnb > ul > li .depth2.active{
+    visibility: visible;
+    opacity: 1.0;
+  }
+  .gnb > ul > li .depth2{
+    position: absolute;
+    display: block;
+    top:53px;
+    left:50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.4, 0, 1, 1);
+    }
+   .gnb .depth2 ul{
+    display: block;
+    background:var(--white);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 200px;
+    box-sizing: border-box;
+  
+  }
+  .gnb .depth2 ul li{
+    color:var(--blacka1);
+    font-size:12px;
+    border-bottom:1px solid #c8c8c8;
+    width: 100%;
+    font-weight: 400;
+  }
+  .gnb .depth2 ul li:last-child{
+    border-bottom:0
+  }
+  .gnb .depth2 ul li a{   
+    font-size:14px;
+    line-height:35px;
+    display: inline-block;
+    padding:0 10px;    
+    width: initial;
+    background-size: 0;
+    color:var(--blacka1);
+    transition: none;
+  }
+  .gnb .depth2 ul li:is(:has(:focus),:hover){
+    background-color: #043B72;
+    background-size: 100%;  
+  }
+  .gnb .depth2 ul li:is(:has(:focus),:hover) a{
+    color:#fff;
+  }
+.header-content .state{
+  display: inline-block;
+  background:rgba(0 ,42,85,0.72);
+  padding:11px 32px;
+  border-radius: 5px;
+
+}
+.header-content .state p{
+  line-height: 14px;
+  color:var(--white);
+  text-align: center;
+}
+.header-content .state span{
+  color:#ffD900;
+}
+#container{
+  background:#F5F5F5;
+  padding:40px;
+  min-height: 100%;
+  height: calc(100vh - 100px);
+  position: relative;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+}

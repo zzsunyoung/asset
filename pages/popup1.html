@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="datepicker.js"></script>
+
+    <script>
+        // 여러 datepicker 초기화
+        $(document).ready(function(){
+            // .datepicker 클래스를 가진 모든 input에 대해 datepicker 초기화
+            $(".datepicker").datepicker({
+                dateFormat: "yy-mm-dd",  // 날짜 형식
+                onClose: function(selectedDate) {
+                    console.log("선택된 날짜:", selectedDate);  // 선택된 날짜 로그 출력
+                }
+            });
+            // 버튼 클릭 시 datepicker 열기 (옵션)
+            $(".btn-cal").click(function() {
+                $(this).prev(".datepicker").datepicker("show");
+            });
+           
+
+            
+        });
+    </script>
+    <title>style</title>
+</head>
+<body>
+ <!-- modal -->
+ <div id="myModal" class="wmodal">
+    <!-- 모달 내용 -->
+    <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+            <h2 id="tit_modal_sample_03" class="modal-title">
+                모달 제목
+            </h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+            <h3 class="conts-tit">내용 타이틀</h3>
+            <div class="conts-area">
+                시작 <br>
+                대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
+                <br>
+            </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+            <button type="button" class="btn tertiary md close-modal">아니요</button>
+            <button type="button" class="btn primary md close-modal">예</button>
+        </div>
+        <!-- //modal btn --> 
+        <!-- close button -->
+        <button type="button" class="btn-close close-modal" id="closeModalBtn"><span class="aria-hidden">닫기</span></button>
+        <!-- //close button --> 
+    </div>
+</div>
+<!-- //modal -->
+</body>
+</html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>미래에셋증권</title>
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
@@ -130,23 +131,20 @@
                         </div>
                         <div class="date-grop">
                             <div class="date">
-                                <input class="input" type="number" placeholder="YYYY-MM-DD" id="cal" />
+                                <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
                                 <button type="button" class="btn-cal"></button>
                             </div>
                             <span>
                                 ~
                             </span>
                             <div class="date">
-                                <input class="input" type="number" placeholder="YYYY-MM-DD" id="cal" />
+                                <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
                                 <button type="button" class="btn-cal"></button>
                             </div>
                             <button type="button" class="btn tertiary">오늘</button>
                             <button type="button" class="btn tertiary">한주</button>
                             <button type="button" class="btn tertiary">한달</button>
                         </div>
-                        
-                        
-                       
                     </div>
                     <div>
                         <input type="text" class="input" placeholder="0505-1234-1234"/>
@@ -154,6 +152,110 @@
                 </div>
             </div>
             <!--//search-->
+            <!--grid btn-->
+            <div class="gird-btn-wrap">
+                <div class="grid-total">
+                    <span class="total">
+                        전체건수 <span class="num">1,233</span>건
+                    </span>
+                    <span>
+                        현제페이지 <span class="now">1</span>/<span>191</span>
+                    </span>       
+                </div>
+                <div class="grid-info">
+                    <span class="ico-text transfer">이관</span>
+                    <span class="ico-text viewer">미리보기</span>
+                    <span class="ico-text del">삭제</span>
+                    <span class="ico-text noimg">이미지없음</span>
+                    <span class="ico-text faxtransfer">이관(전달)팩스</span>
+                    <span class="ico-text delfax">삭제된팩스</span>
+                    <span class="ico-text alarm">예약발신팩스</span>
+                    <span class="ico-text view">결과상세보기</span>
+                </div>
+                <div>
+                    <button type="button" class="btn sm ico-copy">복사</button>
+                    <button type="button" class="btn sm ico-move">이동</button>
+                    <button type="button" class="btn sm ico-del">삭제</button>
+                    <button type="button" class="btn sm ico-xlsdown">엑셀다운로드</button>
+                     <button type="button" class="btn sm ico-register">스팸등록</button>
+                </div>
+            </div>
+            <!--//grid btn-->
+            <!--grid-->
+            <div class="tbl-wrap">
+                <table class="tbl data">
+                    <caption>수신팩스스</caption>
+                    <colgroup>
+                        <col style="width: 5%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: *"/>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="check-group grid-check">
+                                    <input type="checkbox" name="" class="check-type1" id="chk1_1" />
+                                    <label for="chk1_1" class=""></label>
+                                </div>
+                            </th>
+                            <th></th>
+                            <th>구분분</th>
+                            <th>수신자</th>
+                            <th>이관자</th>
+                            <th>수관자</th>
+                            <th>수신번호</th>
+                            <th>송신자<br/>팩스번호</th>
+                            <th>수신일자</th>
+                            <th>수신결과</th>
+                            <th>page</th>
+                            <th>뷰어어</th>
+                            <th>PDF</th>
+                            <th>메모</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tac">
+                                <div class="check-group grid-check">
+                                    <input type="checkbox" name="" class="check-type1" id="chk1_2" />
+                                    <label for="chk1_2" class=""></label>
+                                </div>
+                            </td>
+                            <td class="tac">
+                                <div class="grid-info grid-icon">
+                                    <span class="ico-text transfer" title="이관"></span>
+                                    <span class="ico-text viewer" title="미리보기"></span>
+                                    <span class="ico-text del" title="삭제"></span>
+                                </div>
+                            </td>
+                            <td class="tac">수신팩스</td>
+                            <td class="tac">김홍길(711112345)</td>
+                            <td class="tac">김이나</td>
+                            <td class="tac">김수현</td>
+                            <td class="tac">0505-1234-4556</td>
+                            <td class="tac">0504-1234-4556</td>
+                            <td class="tac">2025-01-01 12:00:00</td>
+                            <td class="tac">성공</td>
+                            <td class="tac">1</td>
+                            <td class="tac"></td>
+                            <td class="tac"></td>
+                            <td class="tac"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--//grid-->
         </div>
     </main>
 </body>

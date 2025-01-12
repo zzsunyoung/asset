@@ -5,7 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="datepicker.js"></script>
 
+    <script>
+        // 여러 datepicker 초기화
+        $(document).ready(function(){
+            // .datepicker 클래스를 가진 모든 input에 대해 datepicker 초기화
+            $(".datepicker").datepicker({
+                dateFormat: "yy-mm-dd",  // 날짜 형식
+                onClose: function(selectedDate) {
+                    console.log("선택된 날짜:", selectedDate);  // 선택된 날짜 로그 출력
+                }
+            });
+            // 버튼 클릭 시 datepicker 열기 (옵션)
+            $(".btn-cal").click(function() {
+                $(this).prev(".datepicker").datepicker("show");
+            });
+            //modal
+            var modal = document.getElementById("myModal");
+            var openModalBtn = document.getElementById("openModalBtn");
+            var closeModalBtn = document.getElementById("closeModalBtn");
+
+            // 버튼 클릭 시 모달 열기
+            openModalBtn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // 닫기 버튼 클릭 시 모달 닫기
+            closeModalBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // 모달 외부를 클릭하면 모달 닫기 (배경 클릭 시)
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            // windows 팝업 열기 함수
+            function openPopup() {
+                window.open('popup1.html', 'popupWindow', 'width=600,height=271,scrollbars=yes,resizable=yes');
+            }
+
+            // windows 팝업 버튼 클릭 시
+            $('#openPopupBtn').click(function() {
+                openPopup();
+            });
+        });
+    </script>
     <title>style</title>
 </head>
 <body>
@@ -14,6 +69,28 @@
         <input class="input" type="text" placeholder="placeholder" /><br />
         <input class="input" type="text" disabled value="disabled" /><br />
         <input class="input" type="text" readonly value="readonly" /><br />
+        <div class="date-grop ">
+            <div class="date">
+                <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                <button type="button" class="btn-cal"></button>
+            </div>
+        </div>
+        <div class="date-grop">
+            <div class="date">
+                <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                <button type="button" class="btn-cal"></button>
+            </div>
+            <span>
+                ~
+            </span>
+            <div class="date">
+                <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                <button type="button" class="btn-cal"></button>
+            </div>
+            <button type="button" class="btn tertiary">오늘</button>
+            <button type="button" class="btn tertiary">한주</button>
+            <button type="button" class="btn tertiary">한달</button>
+        </div>
         <select class="select">
           <option value="">선택하세요.</option>
         </select>
@@ -26,9 +103,36 @@
                 <label for="chk1_1">Yes</label>
             </div>
             <div class="check-group">
-                <input type="checkbox" name="" class="check-type1" id="chk1_33" />
-                <label for="chk1_33">No</label>
+                <input type="checkbox" name="" class="check-type1" id="chk1_2" />
+                <label for="chk1_2">No</label>
             </div>
+            <div class="check-group">
+                <input type="checkbox" name="" class="check-type1" id="chk1_3" disabled/>
+                <label for="chk1_3">Yes</label>
+            </div>
+            <div class="check-group">
+                <input type="checkbox" name="" class="check-type1" id="chk1_4" checked disabled />
+                <label for="chk1_4">선택된 상태 disabled</label>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="check-group">
+                <input type="radio" name="radiogroup" class="radio-type1" id="radio1" />
+                <label for="radio1">Yes</label>
+            </div>
+            <div class="check-group">
+                <input type="radio" name="radiogroup" class="radio-type1" id="radio2" />
+                <label for="radio2">No2</label>
+            </div>
+            <div class="check-group">
+                <input type="radio" name="radiogroup" class="radio-type1" id="radio3" checked disabled/>
+                <label for="radio3">Yes-disabled</label>
+            </div>
+            <div class="check-group">
+                <input type="radio" name="radiogroup" class="radio-type1" id="radio4" disabled />
+                <label for="radio4">No2-disabled</label>
+            </div>
+
         </div>
         <h3>버튼 :기본</h3>
         <button type="button" class="btn primary">버튼 : primary</button>
@@ -88,6 +192,119 @@
             <span class="ico-text alarm" title="예약발신팩스"></span>
             <span class="ico-text view" title="결과상세보기"></span>
         </div>
+
+        <!-- paging -->
+        <div class="pagination">
+            <a class="page-navi prev" href="#" aria-label="이전"></a>
+            <div class="page-links">
+                <a class="page-link" href="#">1</a>
+                <a class="page-link" href="#">2</a>
+                <a class="page-link" href="#">3</a>
+                <a class="page-link" href="#">4</a>
+                <a class="page-link active" href="#">5</a>
+                <a class="page-link" href="#">6</a>
+                <a class="page-link" href="#">7</a>
+                <a class="page-link" href="#">8</a>
+            </div>
+            <a class="page-navi next" href="#" aria-label="다음"></a>
+        </div>
+        <!-- //paging  -->
+
+    
+        <button id="openModalBtn" class="btn primary">모달 열기</button>
+        <!-- modal -->
+        <div id="myModal" class="modal">
+            <!-- 모달 내용 -->
+            <div class="modal-content">
+                <!-- modal title -->
+                <div class="modal-header">
+                    <h2 id="tit_modal_sample_03" class="modal-title">
+                        모달 제목
+                    </h2>
+                </div>
+                <!-- //modal title -->
+                <!-- modal contents -->
+                <div class="modal-conts">
+                    <h3 class="conts-tit">내용 타이틀</h3>
+                    <div class="conts-area">
+                        시작 <br>
+                        대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
+                        <br>
+                    </div>
+                </div>
+                <!-- //modal contents -->
+                <!-- modal btn -->
+                <div class="modal-btn btn-wrap">
+                    <button type="button" class="btn tertiary md close-modal">아니요</button>
+                    <button type="button" class="btn primary md close-modal">예</button>
+                </div>
+                <!-- //modal btn --> 
+                <!-- close button -->
+                <button type="button" class="btn-close close-modal" id="closeModalBtn"><span class="aria-hidden">닫기</span></button>
+                <!-- //close button --> 
+            </div>
+        </div>
+        <!-- //modal -->
+        <!--window popup-->
+        <button id="openPopupBtn" class="btn sm primary">윈도우 팝업</button>
+        <!--//window popup-->
+        <!--search-->
+        <h2>search</h2>
+        <div class="search-group" >
+            <div class="search-inner">
+                <div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="tit">
+                                <label>기간선택</label>
+                            </div>
+                            <div class="date-grop">
+                                <div class="date">
+                                    <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                                    <button type="button" class="btn-cal"></button>
+                                </div>
+                                <span>
+                                    ~
+                                </span>
+                                <div class="date">
+                                    <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                                    <button type="button" class="btn-cal"></button>
+                                </div>
+                                <button type="button" class="btn tertiary">오늘</button>
+                                <button type="button" class="btn tertiary">한주</button>
+                                <button type="button" class="btn tertiary">한달</button>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="input" placeholder="0505-1234-1234"/>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="input" placeholder="0505-1234-1234"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <input type="text" class="input" placeholder="0505-1234-1234"/>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="input" placeholder="0505-1234-1234"/>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="input" placeholder="0505-1234-1234"/>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="input" placeholder="0505-1234-1234"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-btn">
+                    <button type="button" class="btn search">Search</button>
+                </div>
+            </div>
+           
+        </div>
+        <!--//search-->
+
     </div> 
 </body>
 </html>
