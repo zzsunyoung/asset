@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>미래에셋증권</title>
+    <title>aaa</title>
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -11,7 +11,7 @@
 <body>
     <header id="header">
         <div class="header-wrap">
-            <h1 class="logo"><a href="#" aria-label="미래에셋증권" title="미래에셋증권"></a></h1>
+            <h1 class=""><a href="#" aria-label="미래에셋증권" title="미래에셋증권"></a></h1>
             <div class="header-inner">
                 <div class="user-info">
                     <div class="user-btn">
@@ -125,31 +125,81 @@
             <!--search-->
             <div class="search-group" >
                 <div class="search-inner">
-                    <div>
-                        <div class="tit">
-                            <label>기간선택</label>
-                        </div>
-                        <div class="date-grop">
-                            <div class="date">
-                                <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
-                                <button type="button" class="btn-cal"></button>
+                    <div class="custom-grid">
+                        <dl class="grid-span6 ">
+                            <div class="tit">
+                                <label>기간선택</label>
                             </div>
-                            <span>
-                                ~
-                            </span>
-                            <div class="date">
-                                <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
-                                <button type="button" class="btn-cal"></button>
+                            <div class="date-grop">
+                                <div class="date">
+                                    <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                                    <button type="button" class="btn-cal"></button>
+                                </div>
+                                <span>
+                                    ~
+                                </span>
+                                <div class="date">
+                                    <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                                    <button type="button" class="btn-cal"></button>
+                                </div>
+                                <button type="button" class="btn tertiary">오늘</button>
+                                <button type="button" class="btn tertiary">한주</button>
+                                <button type="button" class="btn tertiary">한달</button>
                             </div>
-                            <button type="button" class="btn tertiary">오늘</button>
-                            <button type="button" class="btn tertiary">한주</button>
-                            <button type="button" class="btn tertiary">한달</button>
-                        </div>
+                        </dl>
+                        <dl class="grid-span2">
+                            <div class="tit">
+                                <label>fax번호</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="0505-1234-1234"/>
+                        </dl>
+                        <dl class="grid-span2"> 
+                            <div class="tit">
+                                <label>수신번호</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="수신번호"/>
+                        </dl>
                     </div>
-                    <div>
-                        <input type="text" class="input" placeholder="0505-1234-1234"/>
+                    <div class="custom-grid">
+                        <dl class="grid-span3">
+                            <div class="tit">
+                                <label>확인상태</label>
+                            </div>
+                            <select class="select">
+                                <option value="">확인상태</option>
+                                <option value="">수신확인</option>
+                            </select>
+                        </dl>
+                        <dl class="grid-span3">
+                            <div class="tit">
+                                <label>팩스ID</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="팩스ID"/>
+                        </dl>
+                        <dl class="grid-span2"> 
+                            <div class="tit">
+                                <label>수신번호</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="수신번호"/>
+                        </dl>
+                        <dl class="grid-span2"> 
+                            <div class="tit">
+                                <label>발신자명</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="발신자명"/>
+                        </dl>
+                        <dl class="grid-span4"> 
+                            <div class="tit">
+                                <label>메모</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="메모"/>
+                        </dl>
+                    </div>
+                    <div class="bttonset flex-a-right">
+                        <button type="button" class="btn search">Search</button>
                     </div>
                 </div>
+                
             </div>
             <!--//search-->
             <!--grid btn-->
@@ -184,21 +234,21 @@
             <!--grid-->
             <div class="tbl-wrap">
                 <table class="tbl data">
-                    <caption>수신팩스스</caption>
+                    <caption>수신팩스</caption>
                     <colgroup>
                         <col style="width: 5%;"/>
+                        <col style="width:5%;"/>
+                        <col style="width: 7%;"/>
+                        <col style="width: 8%;"/>
                         <col style="width: 7%;"/>
                         <col style="width: 7%;"/>
                         <col style="width: 7%;"/>
                         <col style="width: 7%;"/>
+                        <col style="width: 9%;"/>
                         <col style="width: 7%;"/>
                         <col style="width: 7%;"/>
-                        <col style="width: 7%;"/>
-                        <col style="width: 7%;"/>
-                        <col style="width: 7%;"/>
-                        <col style="width: 7%;"/>
-                        <col style="width: 7%;"/>
-                        <col style="width: 7%;"/>
+                        <col style="width: 4%;"/>
+                        <col style="width: 4%;"/>
                         <col style="width: *"/>
                     </colgroup>
                     <thead>
@@ -219,7 +269,7 @@
                             <th>수신일자</th>
                             <th>수신결과</th>
                             <th>page</th>
-                            <th>뷰어어</th>
+                            <th>뷰어</th>
                             <th>PDF</th>
                             <th>메모</th>
                         </tr>
@@ -252,10 +302,53 @@
                             <td class="tac"></td>
                             <td class="tac"></td>
                         </tr>
+                        <tr>
+                            <td class="tac">
+                                <div class="check-group grid-check">
+                                    <input type="checkbox" name="" class="check-type1" id="chk1_2" />
+                                    <label for="chk1_2" class=""></label>
+                                </div>
+                            </td>
+                            <td class="tac">
+                                <div class="grid-info grid-icon">
+                                    <span class="ico-text transfer" title="이관"></span>
+                                    <span class="ico-text viewer" title="미리보기"></span>
+                                    <span class="ico-text del" title="삭제"></span>
+                                </div>
+                            </td>
+                            <td class="tac">수신팩스</td>
+                            <td class="tac">김홍길(711112345)</td>
+                            <td class="tac">김이나</td>
+                            <td class="tac">김수현</td>
+                            <td class="tac">0505-1234-4556</td>
+                            <td class="tac">0504-1234-4556</td>
+                            <td class="tac">2025-01-01 12:00:00</td>
+                            <td class="tac">성공</td>
+                            <td class="tac">1</td>
+                            <td class="tac"></td>
+                            <td class="tac"></td>
+                            <td class="tac"></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <!--//grid-->
+            <!-- paging -->
+            <div class="pagination">
+                <a class="page-navi prev" href="#" aria-label="이전"></a>
+                <div class="page-links">
+                    <a class="page-link" href="#">1</a>
+                    <a class="page-link" href="#">2</a>
+                    <a class="page-link" href="#">3</a>
+                    <a class="page-link" href="#">4</a>
+                    <a class="page-link active" href="#">5</a>
+                    <a class="page-link" href="#">6</a>
+                    <a class="page-link" href="#">7</a>
+                    <a class="page-link" href="#">8</a>
+                </div>
+                <a class="page-navi next" href="#" aria-label="다음"></a>
+            </div>
+            <!-- //paging  -->
 
             <!--grid-input-->
             <div class="tbl-wrap">
