@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="datepicker.js"></script>
-
+    
     <script>
         // 여러 datepicker 초기화
         $(document).ready(function(){
@@ -28,12 +28,9 @@
             $(".btn-cal").click(function() {
                 $(this).prev(".datepicker").datepicker("show");
             });
-           
-
-            
         });
     </script>
-    <title>style</title>
+    <title>일반문서발신 Window</title>
 </head>
 <body>
  <!-- modal -->
@@ -43,17 +40,127 @@
         <!-- modal title -->
         <div class="modal-header">
             <h2 id="tit_modal_sample_03" class="modal-title">
-                모달 제목
+                일반문서발신
             </h2>
         </div>
         <!-- //modal title -->
         <!-- modal contents -->
         <div class="modal-conts">
-            <h3 class="conts-tit">내용 타이틀</h3>
+            <h3 class="conts-tit">발신정보</h3>
+            <p><span class="state-required">*</span>표시는 필수 입력 항목입니다.</p>
             <div class="conts-area">
-                시작 <br>
-                대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                <br>
+                <!--tbl-wrap-->
+                <div class="tbl-wrap">
+                    <table class="tbl-type1">
+                        <colgroup>
+                            <col style="width:15%;"/>
+                            <col style="width: *"/>
+                            <col style="width: 15%;"/>
+                            <col style="width: *"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><label for="txt1_1" class=""><span class="state-required">*</span>수신자</label></th>
+                                <td colspan="3" scope="col"><input type="text" class="input w100" id="txt1_1"></td>
+                            </tr>
+                            <tr>
+                                <th><label for="radio1" class=""><span class="state-required">*</span>발신번호선택</label></th>
+                                <td>
+                                    <div class="flex">
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio1" />
+                                            <label for="radio1">개인팩스번호</label>
+                                        </div>
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio2" />
+                                            <label for="radio2">부서팩스번호</label>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th><label for="select1" class=""><span class="state-required">*</span>발신번호</label></th>
+                                <td>
+                                    <select class="select" id="select1">
+                                        <option value="">전체</option>
+                                      </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="txt1_1" class=""><span class="state-required">*</span>수신팩스번호</label></th>
+                                <td colspan="3" scope="col">
+                                   
+                                    <div>
+                                        <input type="text" class="input" id="txt1_1">
+                                        <span class="fs12">팩스번호 입력시 <span class="red">지역번호</span>를 반드시 <span class="blue">포함</span>해야합니다</span>
+                                    </div>
+                                    <div>
+                                        <span class="red fs12">예시) 02-1234-5678</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="radio3" class=""><span class="state-required">*</span>예약발송여부</label></th>
+                                
+                                <td colspan="3" scope="col">
+                                    <div class="flex">
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio3" />
+                                            <label for="radio3">즉신발신</label>
+                                        </div>
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio4" />
+                                            <label for="radio4">예약발신</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="cla01" class="">발신예약</label></th>
+                                <td colspan="3" scope="col">
+                                    <div class="flex">
+                                        <div class="date-grop">
+                                            <div class="date">
+                                                <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="cla01" />
+                                                <button type="button" class="btn-cal"></button>
+                                            </div>
+                                        </div> 
+                                        <select class="select w70px">
+                                            <option value="">오전</option>
+                                            <option value="">오후</option>
+                                        </select>
+                                        <select class="select w70px">
+                                            <option value="">01</option>
+                                            <option value="">02</option>
+                                        </select>
+                                        <span class="fs12">시</span>
+                                        <select class="select w70px">
+                                            <option value="">01</option>
+                                            <option value="">02</option>
+                                        </select>
+                                        <span class="fs12">분</span>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="txt3_1"><span class="state-required">*</span>문서제목</label></th>
+                                <td colspan="3" scope="col">
+                                    <input type="text" class="input w100" id="txt3_1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="txt3_2"><span class="state-required">*</span>발신문서선택</label></th>
+                                <td colspan="3" scope="col">
+                                    <div class="file-box">
+                                       파일업로드 영역
+                                    </div>
+                                    <P class="fs12 blue">* Hwp, doc,docx,ppt,pptx,xls,xlsx,tif,tiff,pdf,jsp</P>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--//tbl-wrap-->
+            </div>
             </div>
         </div>
         <!-- //modal contents -->
