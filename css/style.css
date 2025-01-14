@@ -816,7 +816,7 @@ min-width: 18px;
   position: absolute;
   width: 24px;
   height: 24px;
-  background:url(../images/icon_cal.svg) center 3px no-repeat;
+  background:url(../images/icon_cal.svg) center 0 no-repeat;
   top:0;
   right: 4px;
   background-size: 20px 24px;
@@ -956,6 +956,7 @@ min-width: 18px;
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+  border: 1px solid #c1c1c1;
 }
 .tbl-wrap .tbl.data{
   border-top:2px solid #043B72;
