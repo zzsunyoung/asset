@@ -201,15 +201,7 @@
     display: block !important;
   }
   
-  .tal {
-    text-align: left !important;
-  }
-  .tac {
-    text-align: center !important;
-  }
-  .tar {
-    text-align: right !important;
-  }
+  
   *body, select, textarea, input, button{
     font-family:"Roboto" ,sans-serif;
   }

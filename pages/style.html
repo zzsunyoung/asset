@@ -219,24 +219,139 @@
                 <!-- modal title -->
                 <div class="modal-header">
                     <h2 id="tit_modal_sample_03" class="modal-title">
-                        모달 제목
+                        사용자권한 수정폼
                     </h2>
                 </div>
                 <!-- //modal title -->
                 <!-- modal contents -->
-                <div class="modal-conts">
-                    <h3 class="conts-tit">내용 타이틀</h3>
+                <div class="modal-conts">                  
                     <div class="conts-area">
-                        시작 <br>
-                        대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.
-                        <br>
+                        <p><span class="state-required">*</span>표시는 필수 입력 항목입니다.</p>
+                        <!--tbl-wrap-->
+                <div class="tbl-wrap">
+                    <table class="tbl-type1">
+                        <colgroup>
+                            <col style="width:30%;"/>
+                            <col style="width: *"/>                        
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th><label for="txt1_1" class=""><span class="state-required">*</span>사용자명</label></th>
+                                <td><input type="text" class="input w100" id="txt1_1"></td>
+                            </tr>
+                            <tr>
+                                <th><label for="" class=""><span class="state-required">*</span>사용자명</label></th>
+                                <td> 3282273</td>
+                            </tr>
+                            <tr>
+                                <th><label for="" class="">사용여부</label></th>
+                                <td>
+                                    <div class="flex">
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio1" />
+                                            <label for="radio1">사용</label>
+                                        </div>
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio2" />
+                                            <label for="radio2">미사용</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="" class="">수/발신 이력다운로드</label></th>
+                                <td>
+                                    <div class="flex">
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio3" />
+                                            <label for="radio3">사용</label>
+                                        </div>
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio4" />
+                                            <label for="radio4">미사용</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="" class="">부서팩스 삭제권한</label></th>
+                                <td>
+                                    <div class="flex">
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio5" />
+                                            <label for="radio5">사용</label>
+                                        </div>
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio6" />
+                                            <label for="radio6">미사용</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="" class="">부서팩스 이관권한</label></th>
+                                <td>
+                                    <div class="flex">
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio7" />
+                                            <label for="radio7">사용</label>
+                                        </div>
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio8" />
+                                            <label for="radio8">미사용</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="" class="">이미지/부서팩스<br/>승인결제권한</label></th>
+                                <td>
+                                    <div class="flex">
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio9" />
+                                            <label for="radio9">사용</label>
+                                        </div>
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio10" />
+                                            <label for="radio10">미사용</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="" class="">부서팩스 알람권한</label></th>
+                                <td>
+                                    <div class="flex">
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio11" />
+                                            <label for="radio11">사용</label>
+                                        </div>
+                                        <div class="check-group">
+                                            <input type="radio" name="radiogroup" class="radio-type1" id="radio12" />
+                                            <label for="radio12">미사용</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="" class="">팩스이미지 인쇄/<br/>저장권한</label></th>
+                                <td>
+                                    <select class="select">
+                                        <option value="">선택하세요.</option>
+                                      </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--//tbl-wrap-->
                     </div>
                 </div>
                 <!-- //modal contents -->
                 <!-- modal btn -->
                 <div class="modal-btn btn-wrap">
-                    <button type="button" class="btn tertiary md close-modal">아니요</button>
-                    <button type="button" class="btn primary md close-modal">예</button>
+                    <button type="button" class="btn tertiary md close-modal">수정</button>
+                    <button type="button" class="btn primary md close-modal">취소</button>
                 </div>
                 <!-- //modal btn --> 
                 <!-- close button -->

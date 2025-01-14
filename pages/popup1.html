@@ -46,9 +46,10 @@
         <!-- //modal title -->
         <!-- modal contents -->
         <div class="modal-conts">
-            <h3 class="conts-tit">발신정보</h3>
-            <p><span class="state-required">*</span>표시는 필수 입력 항목입니다.</p>
             <div class="conts-area">
+                <h3 class="conts-tit">발신정보</h3>
+                
+                <p><span class="state-required">*</span>표시는 필수 입력 항목입니다.</p>
                 <!--tbl-wrap-->
                 <div class="tbl-wrap">
                     <table class="tbl-type1">
@@ -160,16 +161,56 @@
                     </table>
                 </div>
                 <!--//tbl-wrap-->
-            </div>
+                <!--btn area-->
+                <div class ="btn-wrap tar mt10">
+                    <button type="button" class="btn primary lg">팩스발신</button>
+                </div>
+                <!--//btn area-->
+                <h3 class="conts-tit">팩스발신 이용가이드</h3>
+                <div>
+                    <div class="guid-box">
+                        <div class="box">
+                            <div class="step01">
+                                <p class="title">Step01. 정보입력</p>
+                                <div class="detail">
+                                    <p>
+                                        <span class="yellow">수신자, 수신팩서번호, 문서제목</span>을 입력합니다. <br/>
+                                        <span class="fs12">(추가정보는 필요시 입력)</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step04">
+                                <p class="title">Step01-01. 예약발송여부</p>
+                                <div class="detail">
+                                    <p>
+                                        ① <span class="yellow">즉시발신</span> : 팩스가 즉시  발신 요청됩니다.<br/>
+                                        ② <span class="yellow">예약발신</span> : 예약 일시를 지정하면 지정된 시간에 발신 요청 됩니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <p class="title step02">Step02. 문서선택</p>
+                            <div class="detail">
+                                <p>
+                                    문서선택에서 <span class="yellow">“찾아보기”</span>  버튼으로 발신할 문서파일을 추가합니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <p class="title step0">Step03. 팩스발신</p>
+                            <div class="detail">
+                                <p>
+                                    추가한 문서 파일은 <span class="yellow">“팩스발신”</span> 버튼으로 문서를 발송합니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- //modal contents -->
-        <!-- modal btn -->
-        <div class="modal-btn btn-wrap">
-            <button type="button" class="btn tertiary md close-modal">아니요</button>
-            <button type="button" class="btn primary md close-modal">예</button>
-        </div>
-        <!-- //modal btn --> 
+       
         <!-- close button -->
         <button type="button" class="btn-close close-modal" id="closeModalBtn"><span class="aria-hidden">닫기</span></button>
         <!-- //close button --> 

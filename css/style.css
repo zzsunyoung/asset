@@ -5,6 +5,7 @@
     --blacka1:#1c1c1c;
     --balck00:#000;
     --orange:#f26900;
+    --yellow:#E87722;
     
     --gray:#adadad; /*input border*/
     --light-gray: #ADADAD;
@@ -48,7 +49,11 @@
   src: url("../font/Roboto-Bold.ttf") format("ttf"), url("../font/Roboto-Bold.woff") format("woff");
 }   
     
-
+body, select, textarea, input, button{
+  font-size: 12px;
+  line-height: 1.4;
+  color:var(--blacka1);
+}
 .align-left{
   text-align: left;
 }
@@ -76,8 +81,23 @@
   align-items: flex-start;
   flex-direction: column;
 }
+.tal {
+  text-align: left !important;
+}
+.tac {
+  text-align: center !important;
+}
+.tar {
+  text-align: right !important;
+}
 .red{
   color:var(--red) !important;
+}
+.orange{
+  color:var(--orange) !important;
+}
+.yellow{
+  color:var(--yellow) !important
 }
 .blue{
   color:var(--blue) !important;
@@ -89,6 +109,7 @@
 .w70px{width: 70px !important;}
 .w100{width: 100% !important;}
 
+.mt10{margin-top:10px}
 /*input*/
 .textarea, .select, .input {    
     box-sizing: border-box;
@@ -989,18 +1010,20 @@ min-width: 18px;
 .tbl-type1 th{
   text-align: left;
   border:1px solid #b6b6b6;
-  padding:0 10px;
+  padding:6px 10px;
 }
 .tbl-type1 th label{
   color:var(--balck00);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.4px;
-  line-height: 24px;
+  line-height: 18px;
 }
+
 .tbl-type1 td{
   padding:6px 10px; 
   text-align: left;
+  min-height: 40px;
 }
 .state-required{
   color:#ff0000 !important;
@@ -1009,4 +1032,110 @@ min-width: 18px;
 .file-box{
   display: block;
   position: relative;
+}
+.guid-box{
+  display: flex;
+  gap:56px;
+  justify-content: center;
+
+}
+.guid-box .box{
+  display: block;
+  width: 170px;
+  height: 110px;
+  position: relative;
+}
+.guid-box .box:first-child{
+  width:310px;
+}
+.guid-box .box .step01{
+  width: 170px;
+}
+.guid-box .box:first-child::after{
+  position: absolute;
+  left:312px;
+  top:43px
+}
+.guid-box .box::after{
+  content: '';
+  display: inline-block;
+  background: url(../images/icon_guid_arrow.svg) center center no-repeat;
+  background-size: 40px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 178px;
+  top:43px;
+
+
+}
+.guid-box .box:last-child::after{
+  display: none;
+}
+.guid-box .title{
+  background:#006FB3;
+  font-size: 12px;
+  color:var(--white);
+  padding:7px;
+  line-height: 16px; 
+  position: relative;
+  
+}
+.guid-box .box .title::after{
+  content: '';
+  display: inline-block;
+  background:url(../images/icon_step01.svg) center center no-repeat;
+  background-size: 16px 16px;
+  position: relative;
+  width: 16px;
+  height: 16px;
+
+}
+.guid-box .step02{
+  background: #601ADB;
+}
+.guid-box .step02::after{
+  background:url(../images/icon_step02.svg) 0 0 no-repeat;
+}
+.guid-box .step03{
+  background: #BB1B86;
+}
+.guid-box .step02::after{
+  background:url(../images/icon_step03.svg) 0 0 no-repeat;
+}
+.guid-box .detail{
+  background:white;
+  border:1px solid #e0e0e0;
+  padding:14px 10px; 
+  height: 52px;
+}
+.guid-box .detail p, span{
+  font-size: 12px;
+  letter-spacing: -0.5px;
+  word-break: keep-all;
+}
+.guid-box .step04{
+  display: block;
+  position: absolute;
+  top:63px;
+  left:135px;
+  width: 170px;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.25);
+
+}
+.guid-box .step04 .title{
+  background:#EBF1FE;
+  color:#1c1c1c;
+}
+.guid-box .step04 .title::after{
+  display: none;
+}
+.guid-box .step04 .detail{
+  border: 0;
+  padding:4px 10px;
+  height: 70px;
+}
+.guid-box .step04 .detail p, 
+.guid-box .step04 .detail span{
+  font-size: 11px;
 }
