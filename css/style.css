@@ -136,8 +136,9 @@ body, select, textarea, input, button{
   }
   textarea:focus, 
   select:focus,
-  input:focus{
-    border:1px solid var(--primary);
+  input:focus,
+  button:focus{
+    border:2px solid var(--primary);
   }
   .select {
     background: url(../images/bg_select.svg) no-repeat right 8px center;
@@ -508,6 +509,20 @@ body, select, textarea, input, button{
   }
   .btn-wrap{
     width: 100%;
+  }
+  .login-btn{
+    display:block;
+    font-weight:600;
+    color:var(--white);
+    font-size: 20px;
+    text-align: center;
+    background:#0d2d4f;
+    height: 60px;
+    width: 400px;
+    border-radius: 4px;
+  }
+  .login-btn:hover{
+    background:var(--primary);
   }
   .ico-text{
     font-size:11px;

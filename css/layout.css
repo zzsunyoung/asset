@@ -1,4 +1,54 @@
 @charset "UTF-8";
+/*login*/
+.login-wrap{
+  width: 100%;
+  height: 100%;
+}
+.login-content{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+  width:515px ;
+}
+.login-wrap .login-logo{
+  background:url(../images/bg_login_logo.svg) 0 0;
+  display: block;
+  width: 345px;
+  height: 119px;
+  margin:0 auto;
+  margin-bottom:30px
+}
+.login-box{
+  display: flex;
+  margin-bottom:16px;
+}
+.login-box span{
+  font-size:20px;
+  line-height:26px;
+  padding:12px 0;
+  margin-right: 10px;
+  width: 80px;
+  color:var(--blacka1);
+}
+.login-wrap input{
+  height: 50px;
+  width:400px;
+  font-size: 16px;
+}
+
+.login-wrap .check-group{
+  margin:46px 0 0 86px;
+}
+.login-wrap .btn-wrap{
+  display: block;
+  position: relative;
+  margin-top:20px
+}
+.login-wrap .login-btn{
+  margin-left:86px
+}
 /*header*/
 #header{
     position: sticky;
