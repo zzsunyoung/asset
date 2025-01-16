@@ -7,7 +7,40 @@
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
+<script>
+    $(document).ready(function () {
+        $('.menu > li').on('click', function (e) {
+            e.preventDefault();
+
+            const $this = $(this); // 클릭된 li
+            const $subMenu = $this.find('.depth2'); // 클릭된 li 내부의 depth2
+
+            // 다른 메뉴의 active 클래스 제거 및 닫기
+            $('.menu > li').not($this).removeClass('active');
+            $('.menu > li .depth2').not($subMenu).slideUp().removeClass('active');
+
+            // 클릭한 메뉴 토글
+            if ($this.hasClass('active')) {
+                $this.removeClass('active');
+                $subMenu.slideUp().removeClass('active');
+            } else {
+                $this.addClass('active');
+                $subMenu.slideDown().addClass('active');
+            }
+        });
+
+        // 영역 밖 클릭 시 메뉴 닫기
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.menu').length) { 
+                // 클릭된 영역이 .menu 내부가 아닐 경우
+                $('.menu > li').removeClass('active'); // 모든 li의 active 클래스 제거
+                $('.menu .depth2').slideUp().removeClass('active'); // 모든 depth2 닫기
+            }
+        });
+    });
+</script>
 <body>
     <header id="header">
         <div class="header-wrap">
@@ -27,7 +60,7 @@
                 </div>
                 <div class="header-content">                
                     <nav class="gnb">
-                        <ul>
+                        <ul class="menu">
                             <li class="">
                                 <a href="#">팩스발신</span></a>
                                 <div class="depth2">
