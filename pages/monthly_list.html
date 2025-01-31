@@ -178,11 +178,11 @@
         <div id="container">
             <!--title-->
             <div class="title_area">
-                <h2 class="title">일별송수신통계</h2>
+                <h2 class="title">월별송수신통계</h2>
                 <ul class="breadcrumbs">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">통계관리</a></li>
-                    <li><a href="#">일별송수신통계</a></li>
+                    <li><a href="#">월별송수신통계</a></li>
                 </ul>
             </div>
             <!--//title-->
@@ -192,24 +192,15 @@
                 <div class="search-inner">
                  
                     <div class="custom-grid">
-                        <dl class="grid-span8">
+                        <dl class="grid-span3">
                             <div class="tit">
-                                <label>기간선택</label>
+                                <label>년도</label>
                             </div>
-                            <div class="date-grop">
-                                <div class="date">
-                                    <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
-                                    <button type="button" class="btn-cal"></button>
-                                </div>
-                                <span>
-                                    ~
-                                </span>
-                                <div class="date">
-                                    <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
-                                    <button type="button" class="btn-cal"></button>
-                                </div>
-                            </div>
-                        </dl>              
+                            <select class="select">
+                                <option value="">2025</option>
+                                <option value="">2024</option>
+                            </select>
+                        </dl>        
                     </div>
                     
                     <div class="bttonset flex-a-right">
@@ -218,15 +209,22 @@
                 </div>
             </div>
             <!--//search-->
-            <!--grid btn-->
-            <div class="gird-btn-wrap">
-                <div class="grid-total"></div>
-                <div>
-                    <button type="button" class="btn sm ico-xlsdown" data-modal="modal2">엑셀다운</button>
-                  
-                </div>
+           <!--grid btn-->
+           <div class="gird-btn-wrap">
+            <div class="grid-total">
+                <span class="total">
+                    전체건수 <span class="num">1,233</span>건
+                </span>
+                <span>
+                    현제페이지 <span class="now">1</span>/<span>191</span>
+                </span>       
             </div>
-            <!--//grid btn-->
+           
+            <div>
+                <button type="button" class="btn sm ico-xlsdown">엑셀다운로드</button>
+            </div>
+        </div>
+        <!--//grid btn-->
             <!--grid-->
             <div class="tbl-wrap">
                 <table class="tbl-type2">
@@ -241,7 +239,7 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th rowspan="2" scope="col">일</th>
+                            <th rowspan="2" scope="col">월월</th>
                             <th colspan="2" scope="col">수신</th>
                             <th colspan="4" scope="col">송신</th>
                         </tr>

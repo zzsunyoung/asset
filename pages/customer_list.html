@@ -178,11 +178,11 @@
         <div id="container">
             <!--title-->
             <div class="title_area">
-                <h2 class="title">일별송수신통계</h2>
+                <h2 class="title">고객번호통계</h2>
                 <ul class="breadcrumbs">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">통계관리</a></li>
-                    <li><a href="#">일별송수신통계</a></li>
+                    <li><a href="#">고객번호통계</a></li>
                 </ul>
             </div>
             <!--//title-->
@@ -192,7 +192,7 @@
                 <div class="search-inner">
                  
                     <div class="custom-grid">
-                        <dl class="grid-span8">
+                        <dl class="grid-span5">
                             <div class="tit">
                                 <label>기간선택</label>
                             </div>
@@ -209,6 +209,12 @@
                                     <button type="button" class="btn-cal"></button>
                                 </div>
                             </div>
+                        </dl>
+                        <dl class="grid-span2">
+                            <div class="tit">
+                                <label>초과횟수</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="초과횟수"/>
                         </dl>              
                     </div>
                     
@@ -218,57 +224,60 @@
                 </div>
             </div>
             <!--//search-->
-            <!--grid btn-->
-            <div class="gird-btn-wrap">
-                <div class="grid-total"></div>
-                <div>
-                    <button type="button" class="btn sm ico-xlsdown" data-modal="modal2">엑셀다운</button>
-                  
+           
+            <div class="flex mr10">
+                <!--grid-->
+                <div class="tbl-wrap">
+                    <table class="tbl-type2">
+                        <caption>고객번호통계</caption>
+                        <colgroup>
+                            <col style="width: *;"/>
+                            <col style="width: 50%;"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="2" scope="col">수신</th>
+                            </tr>
+                            <tr>
+                                <th>전화번호</th>
+                                <th>건수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tac"></td>
+                                <td class="tac">1</td>
+                            </tr>
+                        </tbody>
+                    </table>            
                 </div>
-            </div>
-            <!--//grid btn-->
-            <!--grid-->
-            <div class="tbl-wrap">
-                <table class="tbl-type2">
-                    <caption>일별송수신통계</caption>
-                    <colgroup>
-                        <col style="width: *;"/>
-                        <col style="width: 20%;"/>
-                        <col style="width: 20%;"/>
-                        <col style="width: 20%;"/>
-                        <col style="width: 20%"/>
-                      
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th rowspan="2" scope="col">일</th>
-                            <th colspan="2" scope="col">수신</th>
-                            <th colspan="4" scope="col">송신</th>
-                        </tr>
-                       
-                        <tr>
-                            <th>건수</th>
-                            <th>페이지</th>
-                            <th>성공</th>
-                            <th>실패</th>
-                            <th>페이지</th>
-                            <th>성공률</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                       <tr>
-                        <td class="tac">2025-01-15</td>
-                        <td class="tac">1</td>
-                        <td class="tac">10</td>
-                        <td class="tac">0</td>
-                        <td class="tac">0</td>
-                        <td class="tac">0</td>
-                        <td class="tac">0.00</td>
-                       </tr>
-                       
-                    </tbody>
-                </table>            
-            <!--//grid-->
+                <!--//grid-->
+                <!--grid-->
+                <div class="tbl-wrap">
+                    <table class="tbl-type2">
+                        <caption>고객번호통계 송신</caption>
+                        <colgroup>
+                            <col style="width: *;"/>
+                            <col style="width: 50%;"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="2" scope="col">송신신</th>
+                            </tr>
+                            <tr>
+                                <th>전화번호</th>
+                                <th>건수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tac"></td>
+                                <td class="tac">1</td>
+                            </tr>
+                        </tbody>
+                    </table>            
+                </div>
+                <!--//grid-->
            </div>
       
         </div>    

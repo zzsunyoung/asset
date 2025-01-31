@@ -155,11 +155,11 @@
         <div id="container">
             <!--title-->
             <div class="title_area">
-                <h2 class="title">보낸팩스함</h2>
+                <h2 class="title">스팸번호관리</h2>
                 <ul class="breadcrumbs">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">팩스함</a></li>
-                    <li><a href="#">보낸팩스함</a></li>
+                    <li><a href="#">관리자</a></li>
+                    <li><a href="#">스팸번호관리</a></li>
                 </ul>
             </div>
             <!--//title-->
@@ -167,67 +167,33 @@
             <!--search-->
             <div class="search-group" >
                 <div class="search-inner">
-                 
                     <div class="custom-grid">
-                        <dl class="grid-span8">
+                        <dl class="grid-span2">
                             <div class="tit">
-                                <label>기간선택</label>
+                                <label>스팸분류</label>
                             </div>
-                            <div class="date-grop">
-                                <div class="date">
-                                    <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
-                                    <button type="button" class="btn-cal"></button>
-                                </div>
-                                <span>
-                                    ~
-                                </span>
-                                <div class="date">
-                                    <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
-                                    <button type="button" class="btn-cal"></button>
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <button type="button" class="btn tertiary">오늘</button>
-                                    <button type="button" class="btn tertiary">한주</button>
-                                    <button type="button" class="btn tertiary">한달</button>
-                                </div>
-                            </div>
+                            <select class="select">
+                                <option value="">스팸분류</option>
+                                <option value="">부서주소록</option>
+                            </select>
                         </dl>
                         <dl class="grid-span2">
                             <div class="tit">
-                                <label>발신번호</label>
+                                <label>등록자 아이디</label>
                             </div>
-                            <input type="text" class="input w100" placeholder="발신번호"/>
+                            <input type="text" class="input w100" placeholder="등록자 아이디"/>
                         </dl>
                         <dl class="grid-span2"> 
                             <div class="tit">
-                                <label>수신번호</label>
+                                <label>스팸번호</label>
                             </div>
-                            <input type="text" class="input w100" placeholder="수신번호"/>
+                            <input type="text" class="input w100" placeholder="스팸번호"/>
                         </dl>
-                       
-                        <dl class="grid-span3">
-                            <div class="tit">
-                                <label>팩스ID</label>
-                            </div>
-                            <input type="text" class="input w100" placeholder="팩스ID"/>
-                        </dl>
-                        <dl class="grid-span2">
-                            <div class="tit">
-                                <label>전송상태</label>
-                            </div>
-                            <select class="select">
-                                <option value="">전송상태</option>
-                                <option value="">수신확인</option>
-                            </select>
-                        </dl>               
                     </div>
-                    
                     <div class="bttonset flex-a-right">
                         <button type="button" class="btn search">Search</button>
                     </div>
-                  
                 </div>
-                
             </div>
             <!--//search-->
             <!--grid btn-->
@@ -240,8 +206,8 @@
                         현제페이지 <span class="now">1</span>/<span>191</span>
                     </span>       
                 </div>
-               
                 <div>
+                    <button type="button" class="btn sm ico-register">등록</button>
                     <button type="button" class="btn sm ico-del">삭제</button>
                 </div>
             </div>
@@ -249,22 +215,14 @@
             <!--grid-->
             <div class="tbl-wrap">
                 <table class="tbl data">
-                    <caption>보낸팩스함</caption>
+                    <caption>수신팩스</caption>
                     <colgroup>
-                        <col style="width: 4%;"/>
-                        <col style="width: 10%;"/>
-                        <col style="width: 10%;"/>
-                        <col style="width: 8%;"/>
-                        <col style="width: 8%;"/>
-                        <col style="width: 9%;"/>
-                        <col style="width: 10%;"/>
-                        <col style="width: 8%;"/>
-                        <col style="width: 6%;"/>
-                        <col style="width: 7%;"/>
-                        <col style="width: 7%;"/>
-                        <col style="width: 4%;"/>
-                        <col style="width: *;"/>
-                      
+                        <col style="width: 5%;"/>
+                        <col style="width:*%;"/>
+                        <col style="width: 15%;"/>
+                        <col style="width:15%;"/>
+                        <col style="width: 15%;"/>
+                        <col style="width: 15%;"/>
                     </colgroup>
                     <thead>
                         <tr>
@@ -274,19 +232,11 @@
                                     <label for="chk1_1" class=""></label>
                                 </div>
                             </th>
-                            <th>팩스ID</th>
-                            <th>발신자</th>
-                            <th>제목</th>
-                            <th>수신자</th>
-                            <th>수신번호</th>
-                            <th>송신접수</th>
-                            <th>송신완료</th>
-                            <th>예약여부</th>
-                            <th>예약일시</th>
-                            <th>전송결과</th>
-                            <th>Page</th>
-                            <th>재시도</th>
-                            <th>취소</th>
+                            <th>스팸분류</th>
+                            <th>스팸번호</th>
+                            <th>등록자</th>
+                            <th>등록자명</th>
+                            <th>사용유무</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -297,43 +247,16 @@
                                     <label for="chk1_2" class=""></label>
                                 </div>
                             </td>
-                            <td class="tac"><a href="#">20250109175848006</a></td>
-                            <td class="tac">시스템(system)</td>
+                            <td class="tac">사용자주소록</td>
+                            <td class="tac">212122222</td>
                             <td class="tac"></td>
                             <td class="tac"></td>
-                            <td class="tac">0504-1234-4556</td>
-                            <td class="tac">2025-01-01 12:00:00</td>
-                            <td class="tac"></td>                            
-                            <td class="tac"><a href="#">N</td>
-                            <td class="tac">2025-03-01 12:00</td>
-                            <td class="tac">전송취소</td>
-                            <td class="tac">10</td>
-                            <td class="tac">0</td>
-                            <td class="tac"><button type="button" class="btn sm ">취소</button></td>
+                            <td class="tac">사용</td>
                         </tr>
-                        <tr>
-                            <td class="tac">
-                                <div class="check-group grid-check">
-                                    <input type="checkbox" name="" class="check-type1" id="chk1_2" />
-                                    <label for="chk1_2" class=""></label>
-                                </div>
-                            </td>
-                            <td class="tac"><a href="#">20250109175848006</a></td>
-                            <td class="tac">시스템(system)</td>
-                            <td class="tac"></td>
-                            <td class="tac"></td>
-                            <td class="tac">0504-1234-4556</td>
-                            <td class="tac">2025-01-01 12:00:00</td>
-                            <td class="tac"></td>                            
-                            <td class="tac"><a href="#">N</td>
-                            <td class="tac">2025-03-01 12:00</td>
-                            <td class="tac">전송취소</td>
-                            <td class="tac">10</td>
-                            <td class="tac">0</td>
-                            <td class="tac"><button type="button" class="btn sm ">취소</button></td>
-                        </tr>
+                       
                     </tbody>
                 </table>            
+            </div>
             <!--//grid-->
             <!-- paging -->
             <div class="pagination">

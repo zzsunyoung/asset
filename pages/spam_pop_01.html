@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="datepicker.js"></script>
+
+    <script>
+        // 여러 datepicker 초기화
+        $(document).ready(function(){
+            // .datepicker 클래스를 가진 모든 input에 대해 datepicker 초기화
+            $(".datepicker").datepicker({
+                dateFormat: "yy-mm-dd",  // 날짜 형식
+                onClose: function(selectedDate) {
+                    console.log("선택된 날짜:", selectedDate);  // 선택된 날짜 로그 출력
+                }
+            });
+            // 버튼 클릭 시 datepicker 열기 (옵션)
+            $(".btn-cal").click(function() {
+                $(this).prev(".datepicker").datepicker("show");
+            });
+            //modal
+            var modal = document.getElementById("myModal");
+            var openModalBtn = document.getElementById("openModalBtn");
+            var closeModalBtn = document.getElementById("closeModalBtn");
+
+            // 버튼 클릭 시 모달 열기
+            openModalBtn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // 닫기 버튼 클릭 시 모달 닫기
+            closeModalBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // 모달 외부를 클릭하면 모달 닫기 (배경 클릭 시)
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            // windows 팝업 열기 함수
+            function openPopup() {
+                window.open('popup1.html', 'popupWindow', 'width=860,height=645,scrollbars=yes,resizable=yes');
+            }
+
+            // windows 팝업 버튼 클릭 시
+            $('#openPopupBtn').click(function() {
+                openPopup();
+            });
+        });
+    </script>
+    <title>style</title>
+</head>
+<body>
+    <button id="openModalBtn" class="btn primary">등록</button>
+    <!-- modal -->
+    <div id="myModal" class="modal">
+        <!-- 모달 내용 -->
+        <div class="modal-content">
+            <!-- modal title -->
+            <div class="modal-header">
+                <h2 id="tit_modal_sample_03" class="modal-title">
+                    스팸번호 등록/수정
+                </h2>
+            </div>
+            <!-- //modal title -->
+            <!-- modal contents -->
+            <div class="modal-conts">                  
+                <div class="conts-area">
+                   
+                    <!--tbl-wrap-->
+                    <div class="tbl-wrap">
+                        <table class="tbl-type1">
+                            <colgroup>
+                                <col style="width:30%;"/>
+                                <col style="width: *"/>                        
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><label for="" class="">스팸분류</label></th>
+                                    <td>
+                                        <select class="select">
+                                            <option value="">선택하세요.</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="txt1_1" class="">스팸번호</label></th>
+                                    <td><input type="text" class="input w100" id="txt1_1"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="txt1_1" class="">사용유무</label></th>
+                                    <td>
+                                        <div class="flex">
+                                            <div class="check-group">
+                                                <input type="radio" name="radiogroup" class="radio-type1" id="radio1" />
+                                                <label for="radio1">Y</label>
+                                            </div>
+                                            <div class="check-group">
+                                                <input type="radio" name="radiogroup" class="radio-type1" id="radio2" />
+                                                <label for="radio2">N</label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                <!--//tbl-wrap-->
+                </div>
+                <!-- modal btn -->
+                <div class="modal-btn btn-wrap">
+                    <button type="button" class="btn primary md close-modal">저장</button>
+                    <button type="button" class="btn tertiary md close-modal">닫기</button>
+                </div>
+                <!-- //modal btn --> 
+            </div>
+            <!-- //modal contents -->
+            
+            <!-- close button -->
+            <button type="button" class="btn-close close-modal" id="closeModalBtn"><span class="aria-hidden">닫기</span></button>
+            <!-- //close button --> 
+        </div>
+    </div>
+    <!-- //modal -->
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="datepicker.js"></script>
+
+    <script>
+        // 여러 datepicker 초기화
+        $(document).ready(function(){
+            // .datepicker 클래스를 가진 모든 input에 대해 datepicker 초기화
+            $(".datepicker").datepicker({
+                dateFormat: "yy-mm-dd",  // 날짜 형식
+                onClose: function(selectedDate) {
+                    console.log("선택된 날짜:", selectedDate);  // 선택된 날짜 로그 출력
+                }
+            });
+            // 버튼 클릭 시 datepicker 열기 (옵션)
+            $(".btn-cal").click(function() {
+                $(this).prev(".datepicker").datepicker("show");
+            });
+            //modal
+            var modal = document.getElementById("myModal");
+            var openModalBtn = document.getElementById("openModalBtn");
+            var closeModalBtn = document.getElementById("closeModalBtn");
+
+            // 버튼 클릭 시 모달 열기
+            openModalBtn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // 닫기 버튼 클릭 시 모달 닫기
+            closeModalBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // 모달 외부를 클릭하면 모달 닫기 (배경 클릭 시)
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            // windows 팝업 열기 함수
+            function openPopup() {
+                window.open('popup1.html', 'popupWindow', 'width=860,height=645,scrollbars=yes,resizable=yes');
+            }
+
+            // windows 팝업 버튼 클릭 시
+            $('#openPopupBtn').click(function() {
+                openPopup();
+            });
+        });
+    </script>
+    <title>style</title>
+</head>
+<body>
+    <button id="openModalBtn" class="btn primary">사용자선택</button>
+    <!-- modal -->
+    <div id="myModal" class="modal">
+        <!-- 모달 내용 -->
+        <div class="modal-content">
+            <!-- modal title -->
+            <div class="modal-header">
+                <h2 id="tit_modal_sample_03" class="modal-title">
+                    사용자 선택
+                </h2>
+            </div>
+            <!-- //modal title -->
+            <!-- modal contents -->
+            <div class="modal-conts">                  
+                <div class="conts-area">
+                    <!--search-->
+                    <div class="search-group" >
+                        <div class="search-inner">
+                            <div class="custom-grid">
+                                <dl class="grid-span8">
+                                    <div class="tit">
+                                        <label>아이디</label>
+                                    </div>
+                                    <input type="text" class="input w100" placeholder="아이디"/>
+                                </dl>
+                                <dl class="grid-span8"> 
+                                    <div class="tit">
+                                        <label>이름</label>
+                                    </div>
+                                    <input type="text" class="input w100" placeholder="이름"/>
+                                </dl>
+                            </div>
+                            <div class="bttonset flex-a-right">
+                                <button type="button" class="btn search">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//search-->   
+                    <!--grid btn-->
+            <div class="gird-btn-wrap">
+                <div class="grid-total">
+                    <span class="total">
+                        전체건수 <span class="num">1,233</span>건
+                    </span>
+                    <span>
+                        현제페이지 <span class="now">1</span>/<span>191</span>
+                    </span>       
+                </div>
+                <div></div>
+            </div>
+            <!--//grid btn-->
+            <!--grid-->
+            <div class="tbl-wrap">
+                <table class="tbl data">
+                    <caption>수신팩스</caption>
+                    <colgroup>
+                        <col style="width: 25%;"/>
+                        <col style="width:25%;"/>
+                        <col style="width: 25%;"/>
+                        <col style="width: *%;"/>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>아이디</th>
+                            <th>이름</th>
+                            <th>부서명</th>
+                            <th>팩스번호호</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tac">
+                                10018
+                            </td>
+                            <td class="tac">지은주</td>
+                            <td class="tac">리테일여신팀</td>
+                            <td class="tac">0505-1234-4556</td>
+                        </tr>
+                       
+                    </tbody>
+                </table>            
+            </div>
+            <!--//grid-->
+            <!-- paging -->
+            <div class="pagination">
+                <a class="page-navi prev" href="#" aria-label="이전"></a>
+                <div class="page-links">
+                    <a class="page-link" href="#">1</a>
+                    <a class="page-link" href="#">2</a>
+                    <a class="page-link" href="#">3</a>
+                    <a class="page-link" href="#">4</a>
+                    <a class="page-link active" href="#">5</a>
+                    <a class="page-link" href="#">6</a>
+                    <a class="page-link" href="#">7</a>
+                    <a class="page-link" href="#">8</a>
+                </div>
+                <a class="page-navi next" href="#" aria-label="다음"></a>
+            </div>
+            <!-- //paging  -->
+                </div>
+                <!-- modal btn -->
+                <div class="modal-btn btn-wrap">
+                    <button type="button" class="btn tertiary md close-modal">닫기</button>
+                </div>
+                <!-- //modal btn --> 
+            </div>
+            <!-- //modal contents -->
+            
+            <!-- close button -->
+            <button type="button" class="btn-close close-modal" id="closeModalBtn"><span class="aria-hidden">닫기</span></button>
+            <!-- //close button --> 
+        </div>
+    </div>
+    <!-- //modal -->
+
+</body>
+</html>
