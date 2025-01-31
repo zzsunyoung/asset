@@ -363,13 +363,75 @@
         <!--window popup-->
         <button id="openPopupBtn" class="btn sm primary">윈도우 팝업</button>
         <!--//window popup-->
-        <!--search-->
-        <h2>search</h2>
-        <div class="search-group" >
+        <h2>searhc-1row</h2>
+          <!--search-->
+          <div class="search-group" >
             <div class="search-inner">
-                <div>
-                    <div class="row">
-                        <div class="col-6">
+                <div class="custom-grid">
+                    <dl class="grid-span8">
+                        <div class="tit">
+                            <label>기간선택</label>
+                        </div>
+                        <div class="date-grop">
+                            <div class="date">
+                                <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                                <button type="button" class="btn-cal"></button>
+                            </div>
+                            <span>
+                                ~
+                            </span>
+                            <div class="date">
+                                <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                                <button type="button" class="btn-cal"></button>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <button type="button" class="btn tertiary">오늘</button>
+                                <button type="button" class="btn tertiary">한주</button>
+                                <button type="button" class="btn tertiary">한달</button>
+                            </div>
+                        </div>
+                    </dl>
+                    <dl class="grid-span2">
+                        <div class="tit">
+                            <label>발신번호</label>
+                        </div>
+                        <input type="text" class="input w100" placeholder="발신번호"/>
+                    </dl>
+                    <dl class="grid-span2"> 
+                        <div class="tit">
+                            <label>수신번호</label>
+                        </div>
+                        <input type="text" class="input w100" placeholder="수신번호"/>
+                    </dl>
+                    <dl class="grid-span2">
+                        <div class="tit">
+                            <label>확인상태</label>
+                        </div>
+                        <select class="select">
+                            <option value="">확인상태</option>
+                            <option value="">수신확인</option>
+                        </select>
+                    </dl>
+                    <dl class="grid-span3">
+                        <div class="tit">
+                            <label>팩스ID</label>
+                        </div>
+                        <input type="text" class="input w100" placeholder="팩스ID"/>
+                    </dl>               
+                </div>
+                <div class="bttonset flex-a-right">
+                    <button type="button" class="btn search">Search</button>
+                </div>
+            </div>
+        </div>
+        <!--//search-->
+        <h2>search- 2ROW</h2>
+         <!--search-2row-->
+         <div class="search-group" >
+            <div class="search-inner">
+               
+                    <div class="custom-grid">
+                        <dl class="grid-span8">
                             <div class="tit">
                                 <label>기간선택</label>
                             </div>
@@ -385,40 +447,62 @@
                                     <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
                                     <button type="button" class="btn-cal"></button>
                                 </div>
-                                <button type="button" class="btn tertiary">오늘</button>
-                                <button type="button" class="btn tertiary">한주</button>
-                                <button type="button" class="btn tertiary">한달</button>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn tertiary">오늘</button>
+                                    <button type="button" class="btn tertiary">한주</button>
+                                    <button type="button" class="btn tertiary">한달</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <input type="text" class="input" placeholder="0505-1234-1234"/>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="input" placeholder="0505-1234-1234"/>
-                        </div>
+                        </dl>
+                        <dl class="grid-span2">
+                            <div class="tit">
+                                <label>발신번호</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="발신번호"/>
+                        </dl>
+                        <dl class="grid-span2"> 
+                            <div class="tit">
+                                <label>수신번호</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="수신번호"/>
+                        </dl>
                     </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <input type="text" class="input" placeholder="0505-1234-1234"/>
-                        </div>
-                        <div class="col-3">
-                            <input type="text" class="input" placeholder="0505-1234-1234"/>
-                        </div>
-                        <div class="col-3">
-                            <input type="text" class="input" placeholder="0505-1234-1234"/>
-                        </div>
-                        <div class="col-3">
-                            <input type="text" class="input" placeholder="0505-1234-1234"/>
-                        </div>
+                    <div class="custom-grid">
+                        <dl class="grid-span3">
+                            <div class="tit">
+                                <label>확인상태</label>
+                            </div>
+                            <select class="select">
+                                <option value="">확인상태</option>
+                                <option value="">수신확인</option>
+                            </select>
+                        </dl>
+                        <dl class="grid-span3">
+                            <div class="tit">
+                                <label>팩스ID</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="팩스ID"/>
+                        </dl>                        
+                    
+                        <dl class="grid-span8"> 
+                            <div class="tit">
+                                <label>메모</label>
+                            </div>
+                            <div class="flex">
+                                <input type="text" class="input w70" placeholder="메모"/>
+                                <span class="red"> 메모검색은 등록된 문구와 정확히 일치하여야만 검색 가능합니다.</span>
+                            </div>
+                        </dl>
                     </div>
-                </div>
-                <div class="search-btn">
+                    
+          
+                <div class="bttonset flex-a-right">
                     <button type="button" class="btn search">Search</button>
                 </div>
             </div>
-           
         </div>
-        <!--//search-->
+        <!--//search-2row-->
+     
 
     </div> 
 </body>

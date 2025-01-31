@@ -81,6 +81,9 @@ body, select, textarea, input, button{
   align-items: flex-start;
   flex-direction: column;
 }
+.flex-shrink-0{
+  flex-shrink: 0;
+}
 .tal {
   text-align: left !important;
 }
@@ -107,6 +110,8 @@ body, select, textarea, input, button{
 }
 .w50px{width: 50px !important;}
 .w70px{width: 70px !important;}
+.w80{width: 80% !important;}
+.w90{width: 90% !important;}
 .w100{width: 100% !important;}
 
 .mt10{margin-top:10px}
@@ -682,11 +687,14 @@ body, select, textarea, input, button{
 }
 .search-group > .search-inner{
   padding:15px 15px 10px 15px;
+  position: relative;
 }
+
 .search-group > .search-inner >.custom-grid,
 .search-group > .search-inner > dl{ 
   display: grid;
   grid-template-columns: repeat(20, 1fr);
+  width:calc(100% - 100px);
   align-items: center;
   align-content: space-between;
   grid-gap: 0 8px;
@@ -695,6 +703,10 @@ body, select, textarea, input, button{
 
 .search-group > .search-inner div > * {
   grid-column: span 2;
+}
+.search-group .search-inner .search-inner-box{
+  display: flex;
+  align-items: center;
 }
 .grid-span1 {
   grid-column: span 1 !important;
@@ -782,8 +794,8 @@ s .grid-span9 {
 .search-group .bttonset{
   position: absolute;
   right: 8px;
-  top: 30px;
   margin-top: 0;
+  top:15px;
   align-items: center;
   width: auto;
   height: 32px;
@@ -873,10 +885,8 @@ min-width: 18px;
 
 /* 모달 내용 스타일 */
 .modal-content {
-  background-color: #fff;
   margin: 15% auto;
   padding: 0;
-  border: 1px solid #888;
   width: 80%; /* 화면의 80% 너비 */
   max-width: 500px; /* 최대 너비 설정 */
   position: relative;
@@ -895,6 +905,7 @@ min-width: 18px;
 .modal-content .modal-conts{
   padding:20px 15px;
   box-sizing: border-box;
+  background: var(--white);
 }
 .modal-content .modal-conts .conts-tit{
   background:url(../images/icon_stitle.svg) left 5px no-repeat;
@@ -953,6 +964,7 @@ min-width: 18px;
   font-weight: 400;
   
 }
+
 .gird-btn-wrap .grid-total .total{
   margin-right: 10px;
 }
@@ -965,7 +977,9 @@ min-width: 18px;
   color:var(--orange);
   text-align: center;
 }
-
+.gird-btn-wrap > div:last-child{
+  text-align: right;
+}
 /*table*/
 .tbl-wrap table{
   width: 100%;
@@ -1005,6 +1019,8 @@ min-width: 18px;
   font-weight: 400;
   text-align: left;
 }
+.tbl-wrap .tbl.data a{text-decoration: underline;}
+
 .tbl-wrap .tbl tr:nth-child(even) td{
   background-color:#F6F6F6 ;
 }

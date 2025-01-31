@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미래에셋증권</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // 메뉴 항목 클릭 이벤트 처리
+    const menuItems = document.querySelectorAll('.gnb > ul > li');
+    menuItems.forEach(function (menuItem) {
+        menuItem.addEventListener('click', function (event) {
+            event.preventDefault(); // 기본 링크 동작 방지
+            const subMenu = menuItem.querySelector('.depth2');
+
+            // 다른 메뉴의 active 클래스 제거
+            menuItems.forEach(function (otherMenuItem) {
+                const otherSubMenu = otherMenuItem.querySelector('.depth2');
+                if (otherSubMenu) {
+                    otherSubMenu.classList.remove('active');
+                }
+            });
+
+            // 클릭된 메뉴의 하위 메뉴에 active 클래스 토글
+            if (subMenu) {
+                subMenu.classList.toggle('active');
+            }
+        });
+    });
+
+    // 모달 열기 버튼
+    const modalTriggers = document.querySelectorAll('[data-modal]');
+    // 모달 닫기 버튼
+    const closeButtons = document.querySelectorAll('.btn-close');
+
+    // 모달 열기 이벤트
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (event) => {
+            event.preventDefault(); // 기본 동작 방지
+            const modalId = trigger.getAttribute('data-modal'); // 모달 ID 가져오기
+            const modal = document.getElementById(modalId); // 해당 모달 요소 찾기
+            if (modal) {
+                modal.style.display = 'flex';
+            }
+        });
+    });
+
+    // 모달 닫기 이벤트
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+
+    // 모달 외부 클릭 시 닫기
+    window.addEventListener('click', (event) => {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+});
+
+</script>
+
+
+<body>
+    <header id="header">
+        <div class="header-wrap">
+            <h1 class="logo "><a href="#" aria-label="미래에셋증권" title="미래에셋증권"></a></h1>
+            <div class="header-inner">
+                <div class="user-info">
+                    <div class="user-btn">
+                        <button type="button" class="btn-logout"></button>
+                        <button type="button" class="user-menu"></button>
+                    </div>
+                    <ul>
+                        <li><span>홍길동</span></li>
+                        <li><span>부서 :</span><span>미래에셋증권</span></li>
+                        <li><span>개인FAX : </span><span>0505-1234-1234</span></li>
+                        <li><span>부서 : </span><span>0505-3456-3456</span></li>
+                    </ul>            
+                </div>
+                <div class="header-content">                
+                    <nav class="gnb">
+                        <ul>
+                            <li class="">
+                                <a href="#">팩스발신</span></a>
+                                <div class="depth2">
+                                    <ul>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">팩스결재</a>
+                                <div class="depth2">
+                                    <ul>
+                                        <li><a href=""><span>팩스결재2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">발신팩스함</a>
+                                <div class="depth2" style="display: none;">
+                                    <ul>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">수신팩스함</a>
+                                <div class="depth2" style="display: none;">
+                                    <ul>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">이력관리</a>
+                                <div class="depth2" style="display: none;">
+                                    <ul>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">통계</a>
+                                <div class="depth2" style="display: none;">
+                                    <ul>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        
+                    </nav>
+                    <div class="state">
+                       <p>(금일기준) 수신 <span>0</span>건 / 미확인 <span>0</span>건</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="container">
+            <!--title-->
+            <div class="title_area">
+                <h2 class="title">주소록</h2>
+                <ul class="breadcrumbs">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">팩스함</a></li>
+                    <li><a href="#">주소록</a></li>
+                </ul>
+            </div>
+            <!--//title-->
+           
+            <!--search-->
+            <div class="search-group" >
+                <div class="search-inner">
+                 
+                    <div class="custom-grid">
+                        <dl class="grid-span2">
+                            <div class="tit">
+                                <label>주소록</label>
+                            </div>
+                            <select class="select">
+                                <option value="">주소록 분류</option>
+                                <option value="">부서 주소록</option>
+                                <option value="">사용자 주소록</option>
+                            </select>
+                        </dl>
+                        <dl class="grid-span2"> 
+                            <div class="tit">
+                                <label>그룹명</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="그룹명"/>
+                        </dl>
+                        <dl class="grid-span2">
+                            <div class="tit">
+                                <label>주소록명</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="주소록명"/>
+                        </dl>
+                        <dl class="grid-span3">
+                            <div class="tit">
+                                <label>팩스번호</label>
+                            </div>
+                            <input type="text" class="input w100" placeholder="팩스번호"/>
+                        </dl>               
+                    </div>
+                    
+                    <div class="bttonset flex-a-right">
+                        <button type="button" class="btn search">Search</button>
+                    </div>
+                  
+                </div>
+                
+            </div>
+            <!--//search-->
+            <!--grid btn-->
+            <div class="gird-btn-wrap">
+                <div class="grid-total">
+                    <span class="total">
+                        전체건수 <span class="num">1,233</span>건
+                    </span>
+                    <span>
+                        현제페이지 <span class="now">1</span>/<span>191</span>
+                    </span>       
+                </div>
+               
+                <div>
+                    <button type="button" class="btn sm ico-register" data-modal="modal2">엑셀등록</button>
+                    <button type="button" class="btn sm ico-register">등록</button>
+                    <button type="button" class="btn sm ico-del">삭제</button>
+                </div>
+            </div>
+            <!--//grid btn-->
+            <!--grid-->
+            <div class="tbl-wrap">
+                <table class="tbl data">
+                    <caption>보낸팩스함</caption>
+                    <colgroup>
+                        <col style="width: 4%;"/>
+                        <col style="width: 20%;"/>
+                        <col style="width: 20%;"/>
+                        <col style="width: 20%;"/>
+                        <col style="width: *"/>
+                      
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="check-group grid-check">
+                                    <input type="checkbox" name="" class="check-type1" id="chk1_1" />
+                                    <label for="chk1_1" class=""></label>
+                                </div>
+                            </th>
+                            <th>주소록 분류</th>
+                            <th>그룹명</th>
+                            <th>주소록명</th>
+                            <th>팩스번호</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tac">
+                                <div class="check-group grid-check">
+                                    <input type="checkbox" name="" class="check-type1" id="chk1_2" />
+                                    <label for="chk1_2" class=""></label>
+                                </div>
+                            </td>
+                            <td class="tac">주소록 분류 </td>
+                            <td class="tac">그룹명</td>
+                            <td class="tac">주소록명</td>
+                            <td class="tac"><a href="#" id="" data-modal="modal1">05041333140</a></td>
+                        </tr>
+                       
+                    </tbody>
+                </table>            
+            <!--//grid-->
+            <!-- paging -->
+            <div class="pagination">
+                <a class="page-navi prev" href="#" aria-label="이전"></a>
+                <div class="page-links">
+                    <a class="page-link" href="#">1</a>
+                    <a class="page-link" href="#">2</a>
+                    <a class="page-link" href="#">3</a>
+                    <a class="page-link" href="#">4</a>
+                    <a class="page-link active" href="#">5</a>
+                    <a class="page-link" href="#">6</a>
+                    <a class="page-link" href="#">7</a>
+                    <a class="page-link" href="#">8</a>
+                </div>
+                <a class="page-navi next" href="#" aria-label="다음"></a>
+            </div>
+            <!-- //paging  -->
+            <!-- modal-등록 -->
+            <div id="modal1" class="modal">
+                <!-- 모달 내용 -->
+                <div class="modal-content">
+                    <!-- modal title -->
+                    <div class="modal-header">
+                        <h2 id="tit_modal_sample_03" class="modal-title">
+                        주소록 관리
+                        </h2>
+                    </div>
+                    <!-- //modal title -->
+                    <!-- modal contents -->
+                    <div class="modal-conts">                  
+                        <div class="conts-area">
+                        <!--tbl-wrap-->
+                        <div class="tbl-wrap">
+                            <table class="tbl-type1">
+                                <colgroup>
+                                    <col style="width:30%;"/>
+                                    <col style="width: *"/>                        
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th><label for="" class="">주소록 분류</label></th>
+                                        <td>
+                                            <select class="select">
+                                                <option value="">선택하세요.</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="txt1_1" class="">주소록명</label></th>
+                                        <td><input type="text" class="input w100" id="txt1_1"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="txt1_2" class="">그룹명</label></th>
+                                        <td><input type="text" class="input w100" id="txt1_2"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="txt1_3" class="">팩스번호</label></th>
+                                        <td><input type="text" class="input w100" id="txt1_3"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--//tbl-wrap-->   
+                        <!-- modal btn -->
+                        <div class="modal-btn btn-wrap">
+                            <button type="button" class="btn tertiary md close-modal">저장</button>
+                            <button type="button" class="btn primary md close-modal">닫기</button>
+                        </div>
+                        <!-- //modal btn --> 
+                        <!-- close button -->   
+                        </div>
+                    
+                    </div>
+                    <!-- //modal contents -->
+                   
+                    <button type="button" class="btn-close close-modal" id="closeModalBtn"><span class="aria-hidden">닫기</span></button>
+                    <!-- //close button --> 
+                </div>
+            </div>
+            <!-- //modal-등록 -->
+            
+            <!-- modal-엑셀등록 -->
+            <div id="modal2" class="modal">
+                <!-- 모달 내용 -->
+                <div class="modal-content">
+                    <!-- modal title -->
+                    <div class="modal-header">
+                        <h2 id="tit_modal_sample_03" class="modal-title">
+                       엑셀등록
+                        </h2>
+                    </div>
+                    <!-- //modal title -->
+                    <!-- modal contents -->
+                    <div class="modal-conts">                  
+                        <div class="conts-area">
+                        <!--tbl-wrap-->
+                        <div class="tbl-wrap">
+                            <table class="tbl-type1">
+                                <colgroup>
+                                    <col style="width:30%;"/>
+                                    <col style="width: *"/>                        
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th><label for="" class="">주소록 분류</label></th>
+                                        <td>
+                                            <select class="select">
+                                                <option value="">선택하세요.</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="txt1_1" class="">첨부파일</label></th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="txt1_2" class="">샘플엑셀 다운로드</label></th>
+                                        <td><button type="button" class="btn md ico-xlsdown">엑셀다운로드</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--//tbl-wrap-->   
+                        <!-- modal btn -->
+                        <div class="modal-btn btn-wrap">
+                            <button type="button" class="btn tertiary md close-modal">저장</button>
+                            <button type="button" class="btn primary md close-modal">닫기</button>
+                        </div>
+                        <!-- //modal btn -->     
+                        </div>
+                    </div>
+                    <!-- //modal contents -->
+                  
+                    <!-- close button -->
+                    <button type="button" class="btn-close close-modal" id="closeModalBtn"><span class="aria-hidden">닫기</span></button>
+                    <!-- //close button --> 
+                </div>
+            </div>
+            <!-- //modal-엑셀등록 -->
+    </main>
+</body>
+</html>

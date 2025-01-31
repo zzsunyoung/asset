@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미래에셋증권</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // 메뉴 항목 클릭 이벤트 처리
+    const menuItems = document.querySelectorAll('.gnb > ul > li');
+    menuItems.forEach(function (menuItem) {
+        menuItem.addEventListener('click', function (event) {
+            event.preventDefault(); // 기본 링크 동작 방지
+            const subMenu = menuItem.querySelector('.depth2');
+
+            // 다른 메뉴의 active 클래스 제거
+            menuItems.forEach(function (otherMenuItem) {
+                const otherSubMenu = otherMenuItem.querySelector('.depth2');
+                if (otherSubMenu) {
+                    otherSubMenu.classList.remove('active');
+                }
+            });
+
+            // 클릭된 메뉴의 하위 메뉴에 active 클래스 토글
+            if (subMenu) {
+                subMenu.classList.toggle('active');
+            }
+        });
+    });
+
+    // 모달 열기 버튼
+    const modalTriggers = document.querySelectorAll('[data-modal]');
+    // 모달 닫기 버튼
+    const closeButtons = document.querySelectorAll('.btn-close');
+
+    // 모달 열기 이벤트
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (event) => {
+            event.preventDefault(); // 기본 동작 방지
+            const modalId = trigger.getAttribute('data-modal'); // 모달 ID 가져오기
+            const modal = document.getElementById(modalId); // 해당 모달 요소 찾기
+            if (modal) {
+                modal.style.display = 'flex';
+            }
+        });
+    });
+
+    // 모달 닫기 이벤트
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+
+    // 모달 외부 클릭 시 닫기
+    window.addEventListener('click', (event) => {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+});
+
+</script>
+
+
+<body>
+    <header id="header">
+        <div class="header-wrap">
+            <h1 class="logo "><a href="#" aria-label="미래에셋증권" title="미래에셋증권"></a></h1>
+            <div class="header-inner">
+                <div class="user-info">
+                    <div class="user-btn">
+                        <button type="button" class="btn-logout"></button>
+                        <button type="button" class="user-menu"></button>
+                    </div>
+                    <ul>
+                        <li><span>홍길동</span></li>
+                        <li><span>부서 :</span><span>미래에셋증권</span></li>
+                        <li><span>개인FAX : </span><span>0505-1234-1234</span></li>
+                        <li><span>부서 : </span><span>0505-3456-3456</span></li>
+                    </ul>            
+                </div>
+                <div class="header-content">                
+                    <nav class="gnb">
+                        <ul>
+                            <li class="">
+                                <a href="#">팩스발신</span></a>
+                                <div class="depth2">
+                                    <ul>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">팩스결재</a>
+                                <div class="depth2">
+                                    <ul>
+                                        <li><a href=""><span>팩스결재2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                        <li><a href=""><span>depth2</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">발신팩스함</a>
+                                <div class="depth2" style="display: none;">
+                                    <ul>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">수신팩스함</a>
+                                <div class="depth2" style="display: none;">
+                                    <ul>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">이력관리</a>
+                                <div class="depth2" style="display: none;">
+                                    <ul>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">통계</a>
+                                <div class="depth2" style="display: none;">
+                                    <ul>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                        <li><a href="">depth2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        
+                    </nav>
+                    <div class="state">
+                       <p>(금일기준) 수신 <span>0</span>건 / 미확인 <span>0</span>건</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="container">
+            <!--title-->
+            <div class="title_area">
+                <h2 class="title">일별송수신통계</h2>
+                <ul class="breadcrumbs">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">통계관리</a></li>
+                    <li><a href="#">일별송수신통계</a></li>
+                </ul>
+            </div>
+            <!--//title-->
+           
+            <!--search-->
+            <div class="search-group" >
+                <div class="search-inner">
+                 
+                    <div class="custom-grid">
+                        <dl class="grid-span8">
+                            <div class="tit">
+                                <label>기간선택</label>
+                            </div>
+                            <div class="date-grop">
+                                <div class="date">
+                                    <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                                    <button type="button" class="btn-cal"></button>
+                                </div>
+                                <span>
+                                    ~
+                                </span>
+                                <div class="date">
+                                    <input class="input datepicker" type="text" placeholder="YYYY-MM-DD" id="" />
+                                    <button type="button" class="btn-cal"></button>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <button type="button" class="btn tertiary">오늘</button>
+                                    <button type="button" class="btn tertiary">한주</button>
+                                    <button type="button" class="btn tertiary">한달</button>
+                                </div>
+                            </div>
+                        </dl>              
+                    </div>
+                    
+                    <div class="bttonset flex-a-right">
+                        <button type="button" class="btn search">Search</button>
+                    </div>
+                </div>
+            </div>
+            <!--//search-->
+            <!--grid btn-->
+            <div class="gird-btn-wrap">
+                <div class="grid-total"></div>
+                <div>
+                    <button type="button" class="btn sm ico-xlsdown" data-modal="modal2">엑셀다운운</button>
+                  
+                </div>
+            </div>
+            <!--//grid btn-->
+            <!--grid-->
+            <div class="tbl-wrap">
+                <table class="tbl data">
+                    <caption>일별송수신통계</caption>
+                    <colgroup>
+                        <col style="width: 4%;"/>
+                        <col style="width: 20%;"/>
+                        <col style="width: 20%;"/>
+                        <col style="width: 20%;"/>
+                        <col style="width: 20%"/>
+                      
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" scope="col">일</th>
+                            <th colspan="2" scope="col">수신</th>
+                            <th colspan="4" scope="col">송신</th>
+                        </tr>
+                       
+                        <tr>
+                            <th>건수</th>
+                            <th>페이지</th>
+                            <th>성공</th>
+                            <th>실패</th>
+                            <th>페이지</th>
+                            <th>성공률</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                       </tr>
+                       
+                    </tbody>
+                </table>            
+            <!--//grid-->
+           </div>
+      
+        </div>    
+          
+    </main>
+</body>
+</html>
