@@ -13,7 +13,7 @@
   width:515px ;
 }
 .login-wrap .login-logo{
-  background:url(../images/bg_login_logo.svg) 0 0;
+  background:url(../images/bg_login_logo.svg) no-repeat 0 0;
   display: block;
   width: 345px;
   height: 119px;
@@ -48,6 +48,107 @@
 }
 .login-wrap .login-btn{
   margin-left:86px
+}
+#type01,#type02,#type03{
+  min-width: 1280px;
+  overflow-x: scroll;
+}
+
+#login-type01{
+  width: 100%;
+  height: 100%;
+}
+#login-type01 .login-wrap{
+  display: flex;
+}
+#login-type01 .login-img{
+  background: #FAD643 url(/asset/images/bg_login01.png) no-repeat right bottom;
+  width:770px;
+  height:1024px;
+  background-size:contain;
+
+}
+#login-type01 .login-box-group{
+  display: block;
+  position: relative;
+  width: calc(100% - 770px);
+}
+#login-type01 .login-group{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+}
+
+#login-type02{
+  display: block;
+  background:url(../images/bg_login02.png) no-repeat 0 0;
+  width:100%;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+}
+#login-type02 .login-wrap{
+  background:#fff;
+   width: 1038px;
+   height: 572px;
+  position: relative;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#login-type02 .login-box{
+  
+}
+#login-type02 .loginForm{
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  width:485px
+}
+#login-type02  .login-group{
+  padding-top: 75px;
+}
+#login-type03{
+  background:#EBEAEA;
+  display: block;  
+  width:100%;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  background-size: cover;
+  position: absolute;
+
+  z-index: 1;
+}
+#login-type03 .login-group{
+  background:#fff;
+  width: 1028px;
+  height: 572px;
+  border-radius: 15px;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: relative;
+  padding-top:75px
+}
+#login-type03 .login-group::before{
+  content: '';
+  display: block;
+  position: absolute;
+  background:url(../images/bg_login04.png) no-repeat 0 0 ;
+  width: 420px;
+  height:454px;
+  left:-238px;
+  bottom: -16px;;
+}
+#login-type03 .loginForm{
+  width:513px;
+  margin:auto 0 0 263px;
 }
 /*header*/
 #header{
